@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd" uri="www.oracle.com/webfolder/technetwork/jsc/xml/ns/jaxb/bindingschema_2_0.xsd"/>
+    <system systemId="http://java.sun.com/xml/ns/jaxb/xjc" uri="www.oracle.com/technetwork/java/index.html"/>
+</catalog>

@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws/">
+
+<xs:element name="addPatient" type="tns:addPatient"/>
+
+<xs:element name="getAllNeeds" type="tns:getAllNeeds"/>
+
+<xs:element name="getAllNeedsResponse" type="tns:getAllNeedsResponse"/>
+
+<xs:element name="getAllPatientsSchedule" type="tns:getAllPatientsSchedule"/>
+
+<xs:element name="getAllPatientsScheduleResponse" type="tns:getAllPatientsScheduleResponse"/>
+
+<xs:element name="getNeed" type="tns:getNeed"/>
+
+<xs:element name="getNeedResponse" type="tns:getNeedResponse"/>
+
+<xs:element name="getPatient" type="tns:getPatient"/>
+
+<xs:element name="getPatientResponse" type="tns:getPatientResponse"/>
+
+<xs:element name="setNeed" type="tns:setNeed"/>
+
+<xs:element name="userExists" type="tns:userExists"/>
+
+<xs:element name="userExistsResponse" type="tns:userExistsResponse"/>
+
+<xs:complexType name="addPatient">
+<xs:sequence>
+<xs:element name="firstName" type="xs:string" minOccurs="0"/>
+<xs:element name="lastName" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="city" type="xs:string" minOccurs="0"/>
+<xs:element name="street" type="xs:string" minOccurs="0"/>
+<xs:element name="streetNo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="setNeed">
+<xs:sequence>
+<xs:element name="desc" type="xs:string" minOccurs="0"/>
+<xs:element name="lastVisit" type="xs:string" minOccurs="0"/>
+<xs:element name="minP" type="xs:int"/>
+<xs:element name="maxP" type="xs:int"/>
+<xs:element name="needType" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="timerefId" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllNeeds">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllNeedsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:need" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="need">
+<xs:sequence>
+<xs:element name="duration" type="xs:long"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userExists">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="userExistsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNeed">
+<xs:sequence>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNeedResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:need" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPatient">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPatientResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:patient" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="patient">
+<xs:sequence>
+<xs:element name="address" type="tns:address" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="firstName" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="lastName" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="timeReference" type="tns:timeReference" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="visits" type="tns:visit" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="address">
+<xs:sequence>
+<xs:element name="city" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="street" type="xs:string" minOccurs="0"/>
+<xs:element name="streetNo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="timeReference">
+<xs:sequence>
+<xs:element name="ct" type="tns:caretaker" minOccurs="0"/>
+<xs:element name="endTime" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="patient" type="tns:patient" minOccurs="0"/>
+<xs:element name="startTime" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="caretaker">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="firstName" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="lastName" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="timeReference" type="tns:timeReference" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="visits" type="tns:visit" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="visit">
+<xs:sequence>
+<xs:element name="caretaker" type="tns:caretaker" minOccurs="0"/>
+<xs:element name="confirmed" type="xs:string" minOccurs="0"/>
+<xs:element name="grade" type="xs:int"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="matchtot" type="xs:int"/>
+<xs:element name="patient" type="tns:patient" minOccurs="0"/>
+<xs:element name="tr" type="tns:timeReference" minOccurs="0"/>
+<xs:element name="vDate" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllPatientsSchedule">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllPatientsScheduleResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:timeReference" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

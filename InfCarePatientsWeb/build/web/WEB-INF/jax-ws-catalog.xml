@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/PatientWS/PatientWS?wsdl" uri="wsdl/localhost_8080/PatientWS/PatientWS.wsdl"/>
+    <system systemId="http://localhost:8080/PatientWS/PatientWS?xsd=1" uri="wsdl/localhost_8080/PatientWS/PatientWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/TimeReferenceWS/TimeReferenceWS?wsdl" uri="wsdl/localhost_8080/TimeReferenceWS/TimeReferenceWS.wsdl"/>
+    <system systemId="http://localhost:8080/TimeReferenceWS/TimeReferenceWS?xsd=1" uri="wsdl/localhost_8080/TimeReferenceWS/TimeReferenceWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/VisitWS/VisitWS?wsdl" uri="wsdl/localhost_8080/VisitWS/VisitWS.wsdl"/>
+    <system systemId="http://localhost:8080/VisitWS/VisitWS?xsd=1" uri="wsdl/localhost_8080/VisitWS/VisitWS.xsd_1.xsd"/>
+</catalog>
